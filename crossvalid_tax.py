@@ -45,7 +45,7 @@ def _crossvalid_tax (options):
         print(outf)
 
 def _set_options ():
-    parser = argparse.ArgumentParser(description='This program compares affiliations of the same sequences from metaxa2 and sintax with the same reference database. If there is ambiguity, we choose sintax affiliation with [amb] as prefix.')
+    parser = argparse.ArgumentParser(description='This program compares affiliations of the same sequences from metaxa2 and sintax with the same reference database. If there is ambiguity, we choose the sintax affiliation and add [amb] as prefix.')
     parser.add_argument('-s','--i-sintax-taxtable',action='store',required=True,type=str,dest='input1',help='Sintax output.')
     parser.add_argument('-m','--i-metaxa-taxtable',action='store',required=True,type=str,dest='input2',help='Metaxa output.')
     parser.add_argument('-o','--output_name',action='store',default="crossvalid_output.txt",type=str,dest='outname',help='Output file name. The output file is tabulated.') #si default=0 affiche le resultats dans la console.
