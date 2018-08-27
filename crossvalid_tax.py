@@ -25,9 +25,11 @@ def _crossvalid_tax (options):
         li2 = filsort2[x].rstrip("\n").split(sep='\t')
 
         id1 = li1[0]
-        tax1 = li1[5].split(sep=',')
+        tax1 = li1[3].split(sep=',')        #adjust field (depending on seq IDs)
+        tax1.extend(("NA","NA","NA","NA","NA","NA"))    #prevent affiliation with less than 7 ranks
         tax2 = li2[1].split(sep=';')
-        tax2.extend(("NA","NA","NA","NA","NA","NA"))    #prevent affiliation with less than 7 ranks
+        
+        tax2.extend(("NA","NA","NA","NA","NA","NA"))    
 
         taxf = []
         for rank in range(0,7):
