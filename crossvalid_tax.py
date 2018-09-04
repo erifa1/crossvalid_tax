@@ -32,11 +32,16 @@ def _crossvalid_tax (options):
         tax2.extend(("NA","NA","NA","NA","NA","NA"))    
 
         taxf = []
+        gg=["k__","p__","c__","o__","f__","g__","s__"]
         for rank in range(0,7):
             if tax1[rank][2:]==tax2[rank]:
-                taxf.append(tax2[rank])
+                rankf=gg[rank]+tax2[rank]
+                #print(rankf)
+                taxf.append(rankf)
             else:
-                taxf.append("[amb]"+tax1[rank][2:])
+                rankf2=gg[rank]+tax1[rank][2:]
+                #print(rankf2)
+                taxf.append("[amb]"+rankf2)
         out1 = ';'.join(taxf)
         
         out2 = []
